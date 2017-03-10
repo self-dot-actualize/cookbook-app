@@ -1,6 +1,12 @@
 class RecipesController < ApplicationController
-  def one_recipe_method
-    @recipe = Recipe.first
-    render "one_recipe.html.erb"
+  def index
+    @recipes = Recipe.all
+    render "index.html.erb"
+  end
+
+  def show
+    recipe_id = params[:id]
+    @recipe = Recipe.find_by(id: recipe_id)
+    render "show.html.erb"
   end
 end
