@@ -6,4 +6,5 @@
 <%= form_tag "/recipes/#{@recipe.id}", method: :delete do %>
   <input type="submit" value="Destroy recipe">
 <% end %>
+<%= link_to "Destroy recipe", "/recipes/#{@recipe.id}", method: :delete %>
 <a href="/recipes">Back to all recipes</a>
