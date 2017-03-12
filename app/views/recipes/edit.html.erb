@@ -1,0 +1,16 @@
+<h1>Edit Recipe</h1>
+<%= form_tag "/recipes/#{@recipe.id}", method: :patch do %>
+  <div class="form-group">
+    Title: <input type="text" class="form-control" value="<%= @recipe.title %>" name="form_title">
+  </div>
+  <div class="form-group">
+    Chef: <input type="text" class="form-control" value="<%= @recipe.chef %>" name="form_chef">
+  </div>
+  <div class="form-group">
+    Ingredients: <input type="text" class="form-control" value="<%= @recipe.ingredients %>" name="form_ingredients">
+  </div>
+  <div class="form-group">
+    Directions: <input type="text" class="form-control" value="<%= @recipe.directions %>" name="form_directions">
+  </div>
+  <input type="submit" class="btn btn-default" value="Update recipe">
+<% end %>
