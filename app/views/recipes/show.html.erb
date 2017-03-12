@@ -3,4 +3,7 @@
 <h3><%= @recipe.chef %></h3>
 <p><%= @recipe.ingredients %></p>
 <p><%= @recipe.directions %></p>
+<%= form_tag "/recipes/#{@recipe.id}", method: :delete do %>
+  <input type="submit" value="Destroy recipe">
+<% end %>
 <a href="/recipes">Back to all recipes</a>
