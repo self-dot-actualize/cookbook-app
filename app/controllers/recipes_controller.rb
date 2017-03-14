@@ -48,7 +48,7 @@ class RecipesController < ApplicationController
     recipe_id = params[:id]
     @recipe = Recipe.find_by(id: recipe_id)
     @recipe.destroy
-    flash[:success] = "Recipe successfully destroyed!"
+    flash[:danger] = "Recipe successfully destroyed!"
     redirect_to "/recipes"
   end
 end
