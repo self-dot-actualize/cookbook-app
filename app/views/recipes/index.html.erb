@@ -7,7 +7,12 @@
         <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h3>
         <h6><%= recipe.chef %></h6>
         <img class="recipe-image" src="<%= recipe.image %>" alt="<%= recipe.title %>">
-        <p><%= recipe.ingredients %></p>
+        <h4>Ingredients</h4>
+        <ul>
+          <% recipe.ingredients_list.each do |ingredient| %>
+            <li><%= ingredient %></li>
+          <% end %>
+        </ul>
         <p><%= recipe.directions %></p>
       </div>
     </div>
