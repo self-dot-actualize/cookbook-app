@@ -1,6 +1,7 @@
 <h2>All recipes</h2>
+<% @recipes.each_slice(3) do |three_recipes| %>
 <div class="row">
-  <% @recipes.each do |recipe| %>
+  <% three_recipes.each do |recipe| %>
     <div class="col-md-4">
       <div class="well">
         <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h3>
@@ -12,3 +13,4 @@
     </div>
   <% end %>
 </div>
+<% end %>
