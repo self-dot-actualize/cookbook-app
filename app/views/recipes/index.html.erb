@@ -1,7 +1,14 @@
 <h2>All recipes</h2>
-<% @recipes.each do |recipe| %>
-  <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h3>
-  <h6><%= recipe.chef %></h6>
-  <p><%= recipe.ingredients %></p>
-  <p><%= recipe.directions %></p>
-<% end %>
+<div class="row">
+  <% @recipes.each do |recipe| %>
+    <div class="col-md-4">
+      <div class="well">
+        <h3><a href="/recipes/<%= recipe.id %>"><%= recipe.title %></a></h3>
+        <h6><%= recipe.chef %></h6>
+        <img class="recipe-image" src="<%= recipe.image %>" alt="<%= recipe.title %>">
+        <p><%= recipe.ingredients %></p>
+        <p><%= recipe.directions %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
