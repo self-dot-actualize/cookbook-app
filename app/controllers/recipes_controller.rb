@@ -1,6 +1,7 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    sort_attribute = params[:sort_by] || "title"
+    @recipes = Recipe.all.order(sort_attribute)
     render "index.html.erb"
   end
 
